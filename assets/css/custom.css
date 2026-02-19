@@ -1,0 +1,207 @@
+/* ===== Caruso Love – Color overrides only =====
+   Everything else is handled by the hugo-brewm theme.
+   This file replaces themes/hugo-brewm/assets/css/custom.css
+   and is appended last in the CSS bundle. */
+
+:root {
+  /* warm ivory palette */
+  --ac-light: #2f5d62;
+  --fg-light: #1b1b1b;
+  --bg-light: #f7f4ef;
+  --midtone: #8a8580;
+
+  --ac-dark: #d98c3b;
+  --fg-dark: #f0ece6;
+  --bg-dark: #1a1917;
+
+  --ac-light-less: #2f5d62;
+  --fg-light-less: #2a2520;
+  --bg-light-less: #e8e3db;
+  --midtone-less: #7d7872;
+  --fg-dark-less: #e8e3db;
+  --bg-dark-less: #2a2520;
+  --ac-dark-less: #d98c3b;
+
+  --ac-light-more: #2f5d62;
+  --fg-light-more: #000;
+  --bg-light-more: #fff;
+  --midtone-more: gray;
+  --fg-dark-more: #fff;
+  --bg-dark-more: #000;
+  --ac-dark-more: #d98c3b;
+
+  --hl: #f5e6c8;
+}
+
+/* ===== Prevent white bleed on overscroll bounce (macOS) ===== */
+html {
+  background-color: var(--bg);
+  overscroll-behavior-y: none;
+}
+body::after {
+  content: '';
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  background-color: var(--bg);
+}
+
+/* ===== Subtle entrance animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#content > h2,
+#content > p,
+#content > ul,
+#content > ol,
+.contact-form {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+#content > h2:nth-of-type(1) {
+  animation-delay: 0.05s;
+}
+#content > h2:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+#content > h2:nth-of-type(3) {
+  animation-delay: 0.25s;
+}
+#content > h2:nth-of-type(4) {
+  animation-delay: 0.35s;
+}
+#content > p:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+#content > p:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+#content > ul,
+#content > ol {
+  animation-delay: 0.3s;
+}
+
+/* ===== CTA button ===== */
+
+a.cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.4rem;
+  border: var(--bound);
+  border-radius: 0;
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-family: var(--sf), sans-serif;
+  font-size: var(--small);
+  text-transform: uppercase;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+a.cta:hover {
+  background: var(--ac);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+a.cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+a.cta::after {
+  content: none !important;
+}
+
+/* ===== Smooth separator between sections ===== */
+#content > h2 {
+  position: relative;
+  padding-top: 1.2em;
+}
+#content > h2:first-of-type {
+  padding-top: 0;
+}
+#content > h2:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.4rem;
+  height: 1.5px;
+  background: var(--ac);
+  opacity: 0.5;
+}
+
+/* ===== Contact form ===== */
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+}
+
+.contact-form label {
+  font-family: var(--sf), sans-serif;
+  font-size: var(--small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: var(--golden-ratio);
+  padding: 0.6rem 0.75rem;
+  border: var(--border);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--rm), serif;
+  font-size: var(--normalsize);
+  line-height: 1.618;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--ac);
+  outline-offset: 1px;
+}
+
+.contact-form button {
+  justify-self: start;
+  padding: 0.55rem 1.4rem;
+  border: var(--bound);
+  border-radius: 0;
+  background: var(--ac);
+  color: var(--bg);
+  font-family: var(--sf), sans-serif;
+  font-size: var(--small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: var(--fg);
+}

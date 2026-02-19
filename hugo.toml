@@ -1,0 +1,81 @@
+baseURL = 'https://luisadow.github.io/caruso-love/'
+title = 'Caruso Love'
+theme = 'hugo-brewm'
+
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
+enableMissingTranslationPlaceholders = true
+enableRobotsTXT = true
+canonifyURLs = true
+ignoreFiles = ['\.redacted', '\.old','\.bak', '\.tmp', '\.swp', '\.DS_Store']
+
+[outputs]
+	home = ['html', 'rss', 'json']
+
+[markup]
+	[markup.goldmark]
+		[markup.goldmark.renderer]
+			unsafe = true
+
+[params]
+	title = 'Caruso Love'
+	description = 'Concierge Service in Berlin — wir kümmern uns um alles.'
+	copyright = 'Caruso Love &copy; 2026'
+	extMeta = true
+	ZenMode = false
+	DisableFootBar = false
+	unifiedFooter = true
+
+	[params.author]
+		name = 'Caruso Love'
+		email = 'hello@example.com'
+
+	[params.search]
+		enable = false
+
+	[params.logo]
+		logoMark = '/images/logo.svg'
+		logoMarkDark = '/images/logo-dark.svg'
+		logoType = true
+
+	[params.feed]
+		flowlines = true
+		flowlinesLimit = 21
+
+	[params.home]
+		disableSlide = true
+		disableListing = true
+
+	[params.posts]
+		justifying = false
+		noIndent = false
+		sfdefault = false
+		colophon = false
+		disableHistory = true
+		related = false
+		share = false
+
+	[params.typeface]
+		webSafe = false
+		roman = 'cormorant'
+		sans = 'rosario'
+
+	[params.socialCard]
+		enable = true
+
+[languages]
+	[languages.de]
+		contentDir = 'content/de'
+		disabled = false
+		languageCode = 'de-DE'
+		languageDirection = 'ltr'
+		languageName = 'Deutsch'
+		weight = 1
+
+	[languages.en]
+		contentDir = 'content/en'
+		disabled = false
+		languageCode = 'en-GB'
+		languageDirection = 'ltr'
+		languageName = 'English'
+		weight = 2
