@@ -9,7 +9,7 @@ menu:
 
 Tell us briefly what you need. We will reply promptly with a concrete proposal.
 
-<form method="post" action="#" class="contact-form">
+<form method="POST" action="https://usebasin.com/f/6e1d201db064" class="contact-form">
   <label for="name">Name</label>
   <input id="name" name="name" type="text" required />
 

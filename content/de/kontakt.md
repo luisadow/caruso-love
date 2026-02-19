@@ -9,7 +9,7 @@ menu:
 
 Schildern Sie uns kurz Ihr Anliegen. Wir melden uns zeitnah mit einem konkreten Vorschlag.
 
-<form method="post" action="#" class="contact-form">
+<form method="POST" action="https://usebasin.com/f/6e1d201db064" class="contact-form">
   <label for="name">Name</label>
   <input id="name" name="name" type="text" required />
 
